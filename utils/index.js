@@ -1,3 +1,10 @@
+const generateRecipeRefObj = (recipeDocs, recipes) => {
+  return recipes.reduce((acc, recipe, i) => {
+    acc[recipe.name] = recipeDocs[i]._id;
+    return acc;
+  }, {});
+};
+
 
 const formatRecipe = (userDocs, recipes) => {
   return recipes.map((recipe) => {
@@ -8,16 +15,16 @@ const formatRecipe = (userDocs, recipes) => {
   });
 };
 
-const formatShoppingList = (userDocs, recipeDocs, shoppingData) => {
+const formatShoppingList = (userDocs, recipeDocs, shoppingData, recipeRefObj) => {
   return shoppingData.map((shoppingList) => {
     return {
       ...shoppingList,
       user: userDocs.find(user => user.username === shoppingList.user)._id,
       recipes: shoppingList.recipes.map((listRecipe) => {
-        return recipeDocs.find(recipeDoc => listRecipe === recipeDoc.name)._id
+        return recipeRefObj[listRecipe];
       }),
     };
   });
 };
 
-module.exports = { formatRecipe, formatShoppingList };
+module.exports = { formatRecipe, formatShoppingList, generateRecipeRefObj };

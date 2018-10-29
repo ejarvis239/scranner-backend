@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const { Recipe, ShoppingList, User } = require('../models/index.js');
-const { formatRecipe, formatShoppingList } = require('../utils/index.js');
+const { generateRecipeRefObj, formatRecipe, formatShoppingList } = require('../utils/index.js');
 
 const seed = ({ recipes, shoppingData, users }) => {
   return mongoose.connection
@@ -15,10 +15,11 @@ const seed = ({ recipes, shoppingData, users }) => {
       ]);
     })
     .then(([userDocs, recipeDocs]) => {
+      const recipeRefObj = generateRecipeRefObj(recipeDocs, recipes);
       return Promise.all([
         userDocs,
         recipeDocs,
-        ShoppingList.insertMany(formatShoppingList(userDocs, recipeDocs, shoppingData)),
+        ShoppingList.insertMany(formatShoppingList(userDocs, recipeDocs, shoppingData, recipeRefObj)),
       ]);
     });
 };
