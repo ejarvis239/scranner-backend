@@ -1,0 +1,66 @@
+[
+    {
+        "name": "cooked spinach",
+        "user": "kingblinkyfish",
+        "servings": 1,
+        "ingredients": [
+            {
+                "name": "spinach",
+                "quantity": {
+                    "amount": "3",
+                    "units": "leaves"
+                }
+            }
+        ]
+    },
+    {
+        "name": "Spaghetti bonognese",
+        "user": "emmajarvis",
+        "servings": 2,
+        "ingredients": [
+            {
+                "name": "Spaghetti",
+                "quantity": {
+                    "amount": "200",
+                    "units": "g"
+                }
+            
+        },
+        {
+            "name": "Mushrooms",
+            "quantity": {
+                "amount": "80",
+                "units": "g"
+            }
+        },
+        {
+            "name": "Beef Mince",
+            "quantity": {
+                "amount": "250",
+                "units": "g"
+            }
+        },
+        {
+            "name": "Onion",
+            "quantity": {
+                "amount": "1",
+                "units": "onion"
+            }
+        },
+        {
+            "name": "Chopped Tomatoes",
+            "quantity": {
+                "amount": "1",
+                "units": "tin"
+            }
+        },
+        {
+            "name": "Garlic paste",
+            "quantity": {
+                "amount": "15",
+                "units": "g"
+            }
+        }
+    ]
+}
+]

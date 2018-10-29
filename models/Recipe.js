@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const { Schema } = mongoose;
 
 const RecipeSchema = new Schema({
@@ -9,22 +10,22 @@ const RecipeSchema = new Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'users',
-    required: true
+    required: true,
   },
   servings: {
     type: Number,
-    required: true
+    required: true,
   },
   ingredients: [{
     name: {
       type: String,
-      required: true
+      required: true,
     },
     quantity: {
       amount: String,
-      units: String
-    }
-  }]
+      units: String,
+    },
+  }],
 
 });
 
