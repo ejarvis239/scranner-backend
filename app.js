@@ -10,6 +10,7 @@ const { handle404s, handle400s, handle500s } = require('./errors');
 mongoose.connect(DB_URL, { useNewUrlParser: true })
   .then(() => console.log(`Database ${DB_URL} connected`));
 
+app.use(bodyParser.json());
 app.use('/api', apiRouter);
 
 app.get('/', (req, res) => {
