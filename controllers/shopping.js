@@ -10,4 +10,15 @@ const getShoppingList = (req, res, next) => {
     .catch(next);
 };
 
-module.exports = { getShoppingList };
+const deleteShoppingList = (req, res, next) => {
+  const {user_id} = req.params;
+  ShoppingList.findByIdAndUpdate({_id: user_id})
+  .then(() => {
+    res.status(200).send({ msg: "success" })
+  })
+  .catch(next)
+
+}
+
+
+module.exports = { getShoppingList, deleteShoppingList };
