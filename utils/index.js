@@ -27,18 +27,29 @@ const formatShoppingList = (userDocs, recipeDocs, shoppingData, recipeRefObj) =>
   });
 };
 
-const buildBasket = (newRecipe, recipeList, basketIngredients) => {
-  const updatedRecipe = [...recipeList, newRecipe._id]
+const buildBasket = (newRecipe, recipeList, basketIngredients, update) => {
+    const updatedRecipe = update === 'add'
+    ? [...recipeList, newRecipe._id]
+    : removeRecipe(recipeList, newRecipe._id);
 
-  const updatedIngredients = newRecipe.ingredients.reduce((acc, newIngredient) => {
-    const index = acc.findIndex(element => element.name === newIngredient.name);
-    if (index !== -1) acc[index].amount += Number(newIngredient.amount);
-    else acc = [...acc, {name: newIngredient.name, amount: newIngredient.amount, units: newIngredient.units}];
-    return acc
-  }, basketIngredients);
-
+    const updatedIngredients = newRecipe.ingredients.reduce((acc, newIngredient) => {
+      const index = acc.findIndex(element => element.name === newIngredient.name);
+      if (index !== -1 && update === 'add') acc[index].amount += Number(newIngredient.amount);
+      else if (index !== -1 && update === 'remove') acc[index].amount -= Number(newIngredient.amount);
+      else acc = [...acc, { name: newIngredient.name, amount: newIngredient.amount, units: newIngredient.units }];
+      return acc
+    }, basketIngredients);
   return [updatedRecipe, updatedIngredients]
 }
 
+const removeRecipe = (recipeList, recipeId) => {
+  const index = recipeList.findIndex(recipe => recipe.toString() === recipeId.toString());
+  recipeList.splice(index, 1);
+  return recipeList;
+}
+
+// const updatedRecipe = recipeList.toString().includes(newRecipe._id.toString())
+//   ? recipeList
+//   : [...recipeList, newRecipe._id]
 
 module.exports = { formatRecipe, formatShoppingList, generateRecipeRefObj, buildBasket };

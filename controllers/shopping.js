@@ -24,22 +24,24 @@ const deleteShoppingList = (req, res, next) => {
     .catch(next);
 };
 
-const addToShoppingList = (req, res, next) => {
+const updateShoppingList = (req, res, next) => {
+  const update = req.query.update;
   return Promise.all([
     Recipe.findById(req.params.recipe_id),
     ShoppingList.findOne({ user: req.params.user_id })
   ])
     .then(([recipe, shoppingList]) => {
-      const [updatedRecipe, updatedIngredients] = buildBasket(recipe, shoppingList.recipes, shoppingList.ingredients)
+      const [updatedRecipe, updatedIngredients] = buildBasket(recipe, shoppingList.recipes, shoppingList.ingredients, update)
       return ShoppingList.findByIdAndUpdate(shoppingList._id,
         { $set: { recipes: updatedRecipe, ingredients: updatedIngredients } },
         { new: true })
+        // .populate('user')
+        // .populate('recipes')
     })
     .then((shoppingList) => {
-      console.log(shoppingList);
       res.status(200).send({ shoppingList })
     })
     .catch(next);
 };
 
-module.exports = { getShoppingList, deleteShoppingList, addToShoppingList };
+module.exports = { getShoppingList, deleteShoppingList, updateShoppingList };

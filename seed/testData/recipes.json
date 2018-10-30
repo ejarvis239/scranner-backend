@@ -38,10 +38,8 @@
             },
             {
                 "name": "Chopped Tomatoes",
-                "quantity": {
-                    "amount": "1",
-                    "units": "tin"
-                }
+                "amount": "1",
+                "units": "tin"
             },
             {
                 "name": "Garlic paste",
