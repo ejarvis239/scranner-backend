@@ -20,11 +20,25 @@ const formatShoppingList = (userDocs, recipeDocs, shoppingData, recipeRefObj) =>
     return {
       ...shoppingList,
       user: userDocs.find(user => user.username === shoppingList.user)._id,
-      recipes: shoppingList.recipes.map((listRecipe) => {
+      recipes: shoppingList.recipes.map((listRecipe) => {      
         return recipeRefObj[listRecipe];
       }),
+      ingredients: for (key in shoppingList.ingredients) {
+          ingredient.name = {amount: ingredient.amount, units: ingredient.units}
+      }
     };
   });
 };
 
-module.exports = { formatRecipe, formatShoppingList, generateRecipeRefObj };
+const buildBasket = (newRecipe, recipeList, basketIngredients) => {
+  const updatedRecipe = [...recipeList, newRecipe._id]
+  const updatedIngredients = newRecipe.ingredients.reduce((acc, newIngredient) => {
+    if (acc.newIngredient) acc.newIngredient.amount += newIngredient.amount;
+    else acc.newIngredient = {amount: newIngredient.amount, units: newIngredient.units}
+    return acc
+  }, basketIngredients);
+  return [updatedRecipe, updatedIngredients]
+}
+
+
+module.exports = { formatRecipe, formatShoppingList, generateRecipeRefObj, buildBasket };

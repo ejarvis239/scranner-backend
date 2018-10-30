@@ -17,11 +17,12 @@ const ShoppingListSchema = new Schema({
     },
   ],
 
-  ingredients: [{
-    name: String,
+  ingredients: {
+    name: {
     amount: String,
     units: String,
-  }],
+    }
+  },
 
 });
 
