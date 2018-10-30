@@ -11,14 +11,16 @@ const getShoppingList = (req, res, next) => {
 };
 
 const deleteShoppingList = (req, res, next) => {
-  const {user_id} = req.params;
-  ShoppingList.findByIdAndUpdate({_id: user_id})
-  .then(() => {
-    res.status(200).send({ msg: "success" })
-  })
-  .catch(next)
-
-}
+  ShoppingList.findOneAndUpdate(
+    { user: req.params.user_id },
+    { $set: { recipes: [], ingredients: [] } },
+    { new: true },
+  )
+    .then((shoppingList) => {
+      res.status(200).send({ shoppingList });
+    })
+    .catch(next);
+};
 
 
 module.exports = { getShoppingList, deleteShoppingList };
