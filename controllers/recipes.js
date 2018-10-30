@@ -27,8 +27,8 @@ const addRecipe = (req, res, next) => {
 const deleteRecipe = (req, res, next) => {
   const { recipe_id } = req.params;
   Recipe.findByIdAndRemove({ _id: recipe_id })
-    .then(() => {
-      res.status(200).send({ msg: "Recipe successfully deleted!" });
+    .then((recipe) => {
+      res.status(200).send({ recipe });
     })
     .catch(next);
 

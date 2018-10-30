@@ -65,4 +65,54 @@ describe('/api', function () {
       });
     });
   });
+  describe('/recipes', () => {
+    describe('/api/recipes/:user_id', () => {
+      it('GET responds with a user\'s recipies', () => {
+        return request
+          .get(`/api/recipes/${users[0]._id}`)
+          .expect(200)
+          .then(({ body }) => {
+            expect(body.recipes[0]).to.include.keys(
+              'name', 'user', 'servings', 'ingredients'
+            );
+          });
+      });
+      it('POST creates a new recipe and assigns it to a user', () => {
+        const newRecipe = {
+          name: 'chocolate brownies',
+          servings: 8,
+          ingredients: [
+            {
+              name: 'chocolate',
+              amount: '5',
+              units: 'kg',
+            },
+            {
+              name: 'brownie',
+              amount: '3',
+              units: 'squares',
+            }
+          ]
+        }
+        return request
+          .post(`/api/recipes/${users[0]._id}`)
+          .send(newRecipe)
+          .expect(201)
+          .then(({ body }) => {
+            expect(body.recipe.name).to.equal(newRecipe.name);
+            expect(body.recipe.ingredients[0].name).to.eql(newRecipe.ingredients[0].name);
+          });
+      });
+    });
+    describe('/api/recipes/:recipe_id', () => {
+      it('DELETE removes a recipe', () => {
+        return request
+          .delete(`/api/recipes/${recipes[0]._id}`)
+          .expect(200)
+          .then(({ body }) => {
+            expect(body.recipe.name).to.equal(recipes[0].name);
+          });
+      });
+    });
+  });
 });
