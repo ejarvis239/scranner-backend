@@ -4,44 +4,50 @@
         "recipes": [
             "cooked spinach"
         ],
-        "ingredients": {
-            "spinach": {
+        "ingredients": [
+            {
+                "name": "spinach",
                 "amount": "3",
                 "units": "leaves"
             }
-        }
+        ]
     },
-    
     {
-    "user": "emmajarvis",
-    "recipes": [
-        "Spaghetti bolognese"
-    ],
-    "ingredients": {
-        "Spaghetti": {
-            "amount": "200",
-            "units": "g"
-        },
-        "Mushrooms": {
-            "amount": "80",
-            "units": "g"
-        },
-        "Beef Mince": {
-            "amount": "250",
-            "units": "g"
-        },
-        "Onion": {
-            "amount": "1",
-            "units": "onion"
-        },
-        "Chopped Tomatoes": {
-            "amount": "1",
-            "units": "tin"
-        },
-        "Garlic paste": {
-            "amount": "15",
-            "units": "g"
-        }
+        "user": "emmajarvis",
+        "recipes": [
+            "Spaghetti bolognese"
+        ],
+        "ingredients": [
+            {
+                "name": "Spaghetti",
+                "amount": "200",
+                "units": "g"
+            },
+            {
+                "name": "Mushrooms",
+                "amount": "80",
+                "units": "g"
+            },
+            {
+                "name": "Beef Mince",
+                "amount": "250",
+                "units": "g"
+            },
+            {
+                "name": "Onion",
+                "amount": "1",
+                "units": "onion"
+            },
+            {
+                "name": "Chopped Tomatoes",
+                "amount": "1",
+                "units": "tin"
+            },
+            {
+                "name": "Garlic paste",
+                "amount": "15",
+                "units": "g"
+            }
+        ]
     }
-}
 ]
