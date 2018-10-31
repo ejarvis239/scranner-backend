@@ -6,61 +6,46 @@
         "ingredients": [
             {
                 "name": "spinach",
-                "quantity": {
-                    "amount": "3",
-                    "units": "leaves"
-                }
+                "amount": "3",
+                "units": "leaves"
             }
         ]
     },
     {
-        "name": "Spaghetti bonognese",
+        "name": "Spaghetti bolognese",
         "user": "emmajarvis",
         "servings": 2,
         "ingredients": [
             {
                 "name": "Spaghetti",
-                "quantity": {
-                    "amount": "200",
-                    "units": "g"
-                }
-            
-        },
-        {
-            "name": "Mushrooms",
-            "quantity": {
+                "amount": "200",
+                "units": "g"
+            },
+            {
+                "name": "Mushrooms",
                 "amount": "80",
                 "units": "g"
-            }
-        },
-        {
-            "name": "Beef Mince",
-            "quantity": {
+            },
+            {
+                "name": "Beef Mince",
                 "amount": "250",
                 "units": "g"
-            }
-        },
-        {
-            "name": "Onion",
-            "quantity": {
+            },
+            {
+                "name": "Onion",
                 "amount": "1",
                 "units": "onion"
-            }
-        },
-        {
-            "name": "Chopped Tomatoes",
-            "quantity": {
+            },
+            {
+                "name": "Chopped Tomatoes",
                 "amount": "1",
                 "units": "tin"
-            }
-        },
-        {
-            "name": "Garlic paste",
-            "quantity": {
+            },
+            {
+                "name": "Garlic paste",
                 "amount": "15",
                 "units": "g"
             }
-        }
-    ]
-}
+        ]
+    }
 ]

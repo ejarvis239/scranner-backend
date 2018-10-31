@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const { Schema } = mongoose;
 
 const UserSchema = new Schema({
@@ -32,7 +33,7 @@ const UserSchema = new Schema({
     city: String,
     postcode: String,
     telephone: String,
-  }
+  },
 });
 
 module.exports = mongoose.model('users', UserSchema);
