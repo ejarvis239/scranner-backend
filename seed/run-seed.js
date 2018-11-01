@@ -1,4 +1,4 @@
-process.env.NODE_ENV = 'development';
+process.env.NODE_ENV = 'production';
 const mongoose = require('mongoose');
 const data = require('./testData/index.js');
 const seed = require('./seed.js');
