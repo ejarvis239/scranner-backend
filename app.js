@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const DB_URL = process.env.DB_URL || require('./config/index.js')
 const { handle404s, handle400s, handle500s } = require('./errors');
-
+console.log(DB_URL, '<<<<<<<');
 mongoose.connect(DB_URL, { useNewUrlParser: true })
   .then(() => console.log(`Database ${DB_URL} connected`));
 
