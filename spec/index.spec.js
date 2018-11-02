@@ -158,7 +158,7 @@ describe('/api', function () {
     });
   });
   describe('/api/users/:user_id', () => {
-    it.only('PATCH to update user updates user information', () => {
+    it('PATCH to update user updates user information', () => {
       return request
         .patch(`/api/users/${users[0]._id}`)
         .send({ updatedUsername: 'mitchismean', updatedFirstName: 'mitch', updatedLastName: 'ismean', updatedEmail: "mitchismean@gmail.com"})
