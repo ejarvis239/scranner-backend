@@ -9,4 +9,7 @@ mongoose.connect(DB_URL, { useNewUrlParser: true })
   .then(() => {
     console.log('development database seeded');
     mongoose.disconnect();
-  });
+  })
+  .catch(console.log)
+
+  
