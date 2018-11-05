@@ -13,9 +13,9 @@ mongoose.connect(DB_URL, { useNewUrlParser: true })
 app.use(bodyParser.json());
 app.use('/api', apiRouter);
 
-app.get('/', (req, res) => {
-  res.send({ msg: 'hello world' });
-});
+app.get("/", (req, res, next) =>
+  res.sendFile(`${__dirname}/views/index.html`)
+);
 
 app.use('/*', (req, res) => {
   res.status(404).send({ msg: 'Page not found' });

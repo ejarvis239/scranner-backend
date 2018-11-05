@@ -33,6 +33,7 @@ const buildBasket = (newRecipe, recipeList, basketIngredients, update) => {
     : removeRecipe(recipeList, newRecipe._id);
 
     const updatedIngredients = newRecipe.ingredients.reduce((acc, newIngredient) => {
+      if (update !== "add" && update !== "remove") throw {status: 400};
       const index = acc.findIndex(element => element.name === newIngredient.name);
       if (index !== -1 && update === 'add') acc[index].amount += Number(newIngredient.amount);
       else if (index !== -1 && update === 'remove') acc[index].amount -= Number(newIngredient.amount);
