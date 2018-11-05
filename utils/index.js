@@ -48,8 +48,5 @@ const removeRecipe = (recipeList, recipeId) => {
   return recipeList;
 }
 
-// const updatedRecipe = recipeList.toString().includes(newRecipe._id.toString())
-//   ? recipeList
-//   : [...recipeList, newRecipe._id]
 
-module.exports = { formatRecipe, formatShoppingList, generateRecipeRefObj, buildBasket };
+module.exports = { formatRecipe, formatShoppingList, generateRecipeRefObj, buildBasket};

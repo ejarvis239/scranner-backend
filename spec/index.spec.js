@@ -114,5 +114,59 @@ describe('/api', function () {
           });
       });
     });
+    describe('/api/shopping-list/:user_id', () => {
+      it('GET returns a shopping list for a user by their id', () => {
+        return request
+        .get(`/api/shopping-lists/${users[0]._id}`)
+        .expect(200)
+        .then(({ body }) => {
+          expect(body.shoppingList).to.include.keys(
+            'recipes', 'user', 'ingredients'
+          );
+      });
+    });
   });
+  describe('/api/shopping-lists/:user_id', () => {
+    it('DELETE returns an empty shopping list', () => {
+      return request
+        .delete(`/api/shopping-lists/${users[0]._id}`)
+        .expect(200)
+        .then(({ body }) => {
+          expect(body.shoppingList.recipes.length).to.equal(0)
+          expect(body.shoppingList.ingredients.length).to.equal(0)
+        });
+    });
+  });
+  describe('/api/shopping-lists/:user_id/:recipe_id', () => {
+    it('PATCH shopping list to add a recipe adds recipe to array of recipes in shopping list', () => {
+      return request
+        .patch(`/api/shopping-lists/${users[0]._id}/${recipes[0]._id}?update=add`)
+        .expect(200)
+        .then(({ body }) => {
+          expect(body.shoppingList.recipes.length).to.equal(2)
+        });
+    });
+  });
+  describe('/api/shopping-lists/:user_id/:recipe_id', () => {
+    it('PATCH to remove recipe removes a recipe from the recipe array in the shopping list', () => {
+      return request
+        .patch(`/api/shopping-lists/${users[0]._id}/${recipes[0]._id}?update=remove`)
+        .expect(200)
+        .then(({ body }) => {
+          expect(body.shoppingList.recipes.length).to.equal(0)
+        });
+    });
+  });
+  describe('/api/users/:user_id', () => {
+    it('PATCH to update user updates user information', () => {
+      return request
+        .patch(`/api/users/${users[0]._id}`)
+        .send({ updatedUsername: 'mitchismean', updatedFirstName: 'mitch', updatedLastName: 'ismean', updatedEmail: "mitchismean@gmail.com"})
+        .expect(200)
+        .then(({ body }) => {
+          expect(body.user.username).to.equal("mitchismean")
+        });
+    });
+  });
+});
 });

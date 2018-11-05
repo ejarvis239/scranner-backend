@@ -28,4 +28,15 @@ const addUser = (req, res, next) => {
     .catch(next);
 };
 
-module.exports = { getUser, addUser };
+const updateUser = (req, res, next) => {
+  const {updatedUsername, updatedFirstName, updatedLastName, updatedEmail} = req.body
+  User.findByIdAndUpdate(req.params.user_id,
+    { $set: { username: updatedUsername, firstName: updatedFirstName, lastName: updatedLastName, email: updatedEmail } },
+    { new: true })
+    .then((user) => {
+      res.status(200).send({ user });
+    })
+    .catch(next);
+};
+
+module.exports = { getUser, addUser, updateUser };

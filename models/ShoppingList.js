@@ -22,6 +22,8 @@ const ShoppingListSchema = new Schema({
       name: String,
       amount: Number,
       units: String,
+      foodType: {type: String, default: "unknown" },
+      price: Number
     }
   ],
 

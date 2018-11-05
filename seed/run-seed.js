@@ -1,4 +1,4 @@
-process.env.NODE_ENV = 'development';
+process.env.NODE_ENV = 'production';
 const mongoose = require('mongoose');
 const data = require('./testData/index.js');
 const seed = require('./seed.js');
@@ -9,4 +9,7 @@ mongoose.connect(DB_URL, { useNewUrlParser: true })
   .then(() => {
     console.log('development database seeded');
     mongoose.disconnect();
-  });
+  })
+  .catch(console.log)
+
+  
