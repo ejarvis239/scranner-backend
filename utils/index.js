@@ -37,7 +37,7 @@ const buildBasket = (newRecipe, recipeList, basketIngredients, update) => {
       const index = acc.findIndex(element => element.name === newIngredient.name);
       if (index !== -1 && update === 'add') acc[index].amount += Number(newIngredient.amount);
       else if (index !== -1 && update === 'remove') acc[index].amount -= Number(newIngredient.amount);
-      else acc = [...acc, { name: newIngredient.name, amount: newIngredient.amount, units: newIngredient.units }];
+      else acc = [...acc, { name: newIngredient.name.toLowerCase(), amount: newIngredient.amount, units: newIngredient.units.toLowerCase() }];
       return acc
     }, basketIngredients);
   return [updatedRecipe, updatedIngredients]

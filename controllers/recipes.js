@@ -11,7 +11,20 @@ const getRecipesByUser = (req, res, next) => {
 
 const addRecipe = (req, res, next) => {
   const { user_id } = req.params;
-  const newRecipe = req.body;
+  const ingredients = req.body.ingredients
+  const newIngredients = ingredients.map((ingredient) => {
+    return { 
+      ...ingredient,
+      foodType: ingredient.foodType.toLowerCase(),
+      name: ingredient.name.toLowerCase(),
+      units: ingredient.units.toLowerCase()
+      }})
+  const newRecipe = ({
+    ...req.body, 
+    name: req.body.name.toLowerCase(),
+    ingredients: newIngredients
+    
+  })
   newRecipe.user = user_id;
   Recipe.create(newRecipe)
     .then((recipe) => {
@@ -31,7 +44,6 @@ const deleteRecipe = (req, res, next) => {
       res.status(200).send({ recipe });
     })
     .catch(next);
-
-};
+  }
 
 module.exports = { getRecipesByUser, addRecipe, deleteRecipe };

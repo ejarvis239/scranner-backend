@@ -12,6 +12,10 @@ const getUser = (req, res, next) => {
 const addUser = (req, res, next) => {
   const newUser = User({
     ...req.body,
+    username: req.body.username.toLowerCase(),
+    email: req.body.email.toLowerCase(),
+    firstName: req.body.firstName.toLowerCase(),
+    lastName: req.body.lastName.toLowerCase(),
     profilePicture: 'default',
     address: {
       houseNumber: null,
@@ -23,6 +27,7 @@ const addUser = (req, res, next) => {
   });
   newUser.save()
     .then((user) => {
+      console.log(user)
       res.status(201).send(user);
     })
     .catch(next);
@@ -31,7 +36,7 @@ const addUser = (req, res, next) => {
 const updateUser = (req, res, next) => {
   const {updatedUsername, updatedFirstName, updatedLastName, updatedEmail} = req.body
   User.findByIdAndUpdate(req.params.user_id,
-    { $set: { username: updatedUsername, firstName: updatedFirstName, lastName: updatedLastName, email: updatedEmail } },
+    { $set: { username: updatedUsername.toLowerCase(), firstName: updatedFirstName.toLowerCase(), lastName: updatedLastName.toLowerCase(), email: updatedEmail.toLowerCase() } },
     { new: true })
     .then((user) => {
       res.status(200).send({ user });

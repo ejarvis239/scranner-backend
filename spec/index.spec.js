@@ -47,10 +47,10 @@ describe('/api', function () {
       });
       it('POST user returns status 201 and a new user', () => {
         const newUser = {
-          username: 'blinky',
-          email: 'blinkyboi@email.com',
-          firstName: 'blinky',
-          lastName: 'the fish',
+          username: 'Blinky',
+          email: 'blinkyboi@gmail.com',
+          firstName: 'Blinky',
+          lastName: 'the Fish',
         };
         return request
           .post('/api/users')
@@ -60,7 +60,7 @@ describe('/api', function () {
             expect(body).to.include.keys(
               'username', 'firstName', 'lastName', 'email', 'profilePicture', 'address',
             );
-            expect(body.username).to.equal(newUser.username);
+            expect(body.username).to.equal(newUser.username.toLowerCase());
           });
       });
     });
@@ -77,20 +77,22 @@ describe('/api', function () {
             );
           });
       });
-      it('POST creates a new recipe and assigns it to a user', () => {
+      it.only('POST creates a new recipe and assigns it to a user', () => {
         const newRecipe = {
-          name: 'chocolate brownies',
+          name: 'Chocolate Brownies',
           servings: 8,
           ingredients: [
             {
-              name: 'chocolate',
+              name: 'Chocolate',
+              foodType: 'unknown',
               amount: '5',
               units: 'kg',
             },
             {
-              name: 'brownie',
+              name: 'Brownie',
+              foodType: 'unknown',
               amount: '3',
-              units: 'squares',
+              units: 'Squares',
             }
           ]
         }
@@ -99,8 +101,8 @@ describe('/api', function () {
           .send(newRecipe)
           .expect(201)
           .then(({ body }) => {
-            expect(body.recipe.name).to.equal(newRecipe.name);
-            expect(body.recipe.ingredients[0].name).to.eql(newRecipe.ingredients[0].name);
+            expect(body.recipe.name).to.equal(newRecipe.name.toLowerCase());
+            expect(body.recipe.ingredients[0].name).to.eql(newRecipe.ingredients[0].name.toLowerCase());
           });
       });
     });
@@ -161,7 +163,7 @@ describe('/api', function () {
     it('PATCH to update user updates user information', () => {
       return request
         .patch(`/api/users/${users[0]._id}`)
-        .send({ updatedUsername: 'mitchismean', updatedFirstName: 'mitch', updatedLastName: 'ismean', updatedEmail: "mitchismean@gmail.com"})
+        .send({ updatedUsername: 'Mitchismean', updatedFirstName: 'Mitch', updatedLastName: 'Ismean', updatedEmail: "mitchismean@gmail.com"})
         .expect(200)
         .then(({ body }) => {
           expect(body.user.username).to.equal("mitchismean")

@@ -12,37 +12,49 @@
         ]
     },
     {
-        "name": "Spaghetti bolognese",
+        "name": "courgette",
+        "user": "kingblinkyfish",
+        "servings": 1,
+        "ingredients": [
+            {
+                "name": "courgette",
+                "amount": "1",
+                "units": "slice"
+            }
+        ]
+    },
+    {
+        "name": "spaghetti bolognese",
         "user": "emmajarvis",
         "servings": 2,
         "ingredients": [
             {
-                "name": "Spaghetti",
+                "name": "spaghetti",
                 "amount": "200",
                 "units": "g"
             },
             {
-                "name": "Mushrooms",
+                "name": "mushrooms",
                 "amount": "80",
                 "units": "g"
             },
             {
-                "name": "Beef Mince",
+                "name": "beef mince",
                 "amount": "250",
                 "units": "g"
             },
             {
-                "name": "Onion",
+                "name": "onion",
                 "amount": "1",
                 "units": "onion"
             },
             {
-                "name": "Chopped Tomatoes",
+                "name": "chopped tomatoes",
                 "amount": "1",
                 "units": "tin"
             },
             {
-                "name": "Garlic paste",
+                "name": "garlic paste",
                 "amount": "15",
                 "units": "g"
             }
