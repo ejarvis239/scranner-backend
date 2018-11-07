@@ -12,12 +12,61 @@
         ]
     },
     {
+        "name": "vegan food",
+        "user": "mitchismean",
+        "servings": 2,
+        "ingredients": [
+            {
+                "name": "vegetables",
+                "amount": "2",
+                "units": "portions"
+            }
+        ]
+    },
+    {
         "name": "courgette",
         "user": "kingblinkyfish",
         "servings": 1,
         "ingredients": [
             {
                 "name": "courgette",
+                "amount": "1",
+                "units": "slice"
+            }
+        ]
+    },
+    {
+        "name": "lots of cheese",
+        "user": "emmajarvis",
+        "servings": 1,
+        "ingredients": [
+            {
+                "name": "chaource",
+                "amount": "1",
+                "units": "slice"
+            },
+            {
+                "name": "comte",
+                "amount": "1",
+                "units": "slice"
+            },
+            {
+                "name": "ossau iraty",
+                "amount": "1",
+                "units": "slice"
+            },
+            {
+                "name": "doux du montagne",
+                "amount": "1",
+                "units": "slice"
+            },
+            {
+                "name": "Valencay",
+                "amount": "1",
+                "units": "slice"
+            },
+            {
+                "name": "Rigotte de Condrieu",
                 "amount": "1",
                 "units": "slice"
             }
