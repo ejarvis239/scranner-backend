@@ -24,6 +24,76 @@
         ]
     },
     {
+        "name": "Harissa Hummus & Freekeh Salad",
+        "user": "mitchismean",
+        "servings": 2,
+        "ingredients": [
+            {
+                "name": "chickpeas",
+                "amount": "200",
+                "units": "g"
+            },
+            {
+                "name": "tahini",
+                "amount": "10",
+                "units": "g"
+            },
+            {
+                "name": "freekeh",
+                "amount": "100",
+                "units": "g"
+            },
+            {
+                "name": "onion",
+                "amount": "1",
+                "units": "onion"
+            },
+            {
+                "name": "mint",
+                "amount": "10",
+                "units": "g"
+            }
+        ]
+    },
+
+    {
+        "name": "vegetable noodles & cashew nut sauce",
+        "user": "mitchismean",
+        "servings": 2,
+        "ingredients": [
+            {
+                "name": "coriander",
+                "amount": "10",
+                "units": "g"
+            },
+            {
+                "name": "garlic",
+                "amount": "1",
+                "units": "clove"
+            },
+            {
+                "name": "onion",
+                "amount": "1",
+                "units": "onion"
+            },
+            {
+                "name": "cashew nuts",
+                "amount": "100",
+                "units": "g"
+            },
+            {
+                "name": "noodles",
+                "amount": "100",
+                "units": "g"
+            },
+            {
+                "name": "chilli",
+                "amount": "1",
+                "units": "chilli"
+            }
+        ]
+    },
+    {
         "name": "courgette",
         "user": "kingblinkyfish",
         "servings": 1,
@@ -32,6 +102,43 @@
                 "name": "courgette",
                 "amount": "1",
                 "units": "slice"
+            }
+        ]
+    },
+    {
+        "name": "Crispy Baked Tacos, Refried Beans & Pineapple Salsa",
+        "user": "mitchismean",
+        "servings": 2,
+        "ingredients": [
+            {
+                "name": "lime",
+                "amount": "1",
+                "units": "lime"
+            },
+            {
+                "name": "chipotle",
+                "amount": "20",
+                "units": "g"
+            },
+            {
+                "name": "tomatoes",
+                "amount": "125",
+                "units": "g"
+            },
+            {
+                "name": "black beans",
+                "amount": "1",
+                "units": "can"
+            },
+            {
+                "name": "pineapple",
+                "amount": "220",
+                "units": "g"
+            },
+            {
+                "name": "tortilla",
+                "amount": "6",
+                "units": "tortilla wraps"
             }
         ]
     },
@@ -103,9 +210,9 @@
                 "units": "tin"
             },
             {
-                "name": "garlic paste",
-                "amount": "15",
-                "units": "g"
+                "name": "garlic",
+                "amount": "1",
+                "units": "clove"
             }
         ]
     }

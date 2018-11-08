@@ -20,8 +20,8 @@ const RecipeSchema = new Schema({
     name: String,
     amount: Number,
     units: String,
-    foodType: {type: String, default: "unknown"},
-    price: Number,
+    foodType: {type: String, default: "fresh produce"},
+    price: {type: Number, default: 10},
     }],
 
 });
