@@ -39,6 +39,7 @@ const updateShoppingList = (req, res, next) => {
         // .populate('recipes')
     })
     .then((shoppingList) => {
+      console.log(shoppingList)
       res.status(200).send({ shoppingList })
     })
     .catch(next);

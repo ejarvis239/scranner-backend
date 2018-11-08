@@ -33,10 +33,11 @@ const buildBasket = (newRecipe, recipeList, basketIngredients, update) => {
     : removeRecipe(recipeList, newRecipe._id);
 
     const updatedIngredients = newRecipe.ingredients.reduce((acc, newIngredient) => {
+      if (update !== "add" && update !== "remove") throw {status: 400};
       const index = acc.findIndex(element => element.name === newIngredient.name);
       if (index !== -1 && update === 'add') acc[index].amount += Number(newIngredient.amount);
       else if (index !== -1 && update === 'remove') acc[index].amount -= Number(newIngredient.amount);
-      else acc = [...acc, { name: newIngredient.name, amount: newIngredient.amount, units: newIngredient.units }];
+      else acc = [...acc, { name: newIngredient.name.toLowerCase(), amount: newIngredient.amount, units: newIngredient.units.toLowerCase() }];
       return acc
     }, basketIngredients);
   return [updatedRecipe, updatedIngredients]
@@ -48,8 +49,5 @@ const removeRecipe = (recipeList, recipeId) => {
   return recipeList;
 }
 
-// const updatedRecipe = recipeList.toString().includes(newRecipe._id.toString())
-//   ? recipeList
-//   : [...recipeList, newRecipe._id]
 
-module.exports = { formatRecipe, formatShoppingList, generateRecipeRefObj, buildBasket };
+module.exports = { formatRecipe, formatShoppingList, generateRecipeRefObj, buildBasket};

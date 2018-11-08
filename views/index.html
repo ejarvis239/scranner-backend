@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home Page</title>
+</head>
+
+<body>
+    <h3>Api endpoints</h3>
+
+    <ul>
+        <li>GET /api -- returns this home page.
+        </li>
+        <br>
+        <li> GET /api/users/:username -- returns a specific user. </li>
+        <li> POST /api/users/:username -- adds a new user, requires a JSON object containing a username, firstName, lastName, and email.</li>
+        <li> PATCH /api/users/:username -- updates an existing users details.</li>
+        <br>
+        <li> GET /api/recipes/:user_id -- returns a specific user's id.</li>
+        <li> POST /api/recipes/:user_id -- adds a recipe for a user, requires a name, user, servings and ingredients.</li>
+        <li> DELETE /api/recipes/:user_id/:recipe_id -- deletes a specific recipe.</li>
+         <br>
+        <li> GET /api/shopping-lists/:user_id -- returns a specific user's shopping list</li>
+        <li> DELETE /api/shopping-lists/:user_id -- empties a given user's shopping list.</li>
+        <li> PATCH /api/shopping-lists/:user_id/:recipe_id -- adds or removed a given recipe from the shopping list. Requires an update query or either 'add' or 'remove'</li>
+    </ul>
+</body>
+
+</html>
