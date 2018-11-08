@@ -7,7 +7,7 @@ A live version of this API can be viewed here: https://scranner123.herokuapp.com
 The repo for the frontend of this project is avalable here: https://github.com/arcSurfer73878/Scranner-Project
 
 ## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purpo
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 Before starting, you should ensure the following are installed:
