@@ -1,8 +1,10 @@
 # Scranner - Backend 
 
-A backend API that allows users to post recipes, and store ingredients in a shopping list.
+A backend API for project Scranner -  an app that allows users to extract text from photos of recipes and add these to a shopping list.
 
-A live version can be viewed at: https://scranner123.herokuapp.com/
+A live version of this API can be viewed here: https://scranner123.herokuapp.com/
+
+The repo for the frontend of this project is avalable here: https://github.com/arcSurfer73878/Scranner-Project
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purpo
@@ -95,3 +97,14 @@ The following endpoints are available to users.
 * DELETE /api/shopping-lists/:user_id -- empties a given user's shopping list.
 
 * PATCH /api/shopping-lists/:user_id/:recipe_id -- adds or removs a given recipe from the user's shopping list. Requires an update query or either 'add' or 'remove'
+
+## Authors
+
+* **Patrick Lawrence** - [MrPGLawrence](https://github.com/MrPGLawrence)
+* **Emma Jarvis** - [ejarvis239](https://github.com/ejarvis239)
+* **Rachael Hall** - [sputnikboom](https://github.com/sputnikboom)
+* **Kaiming Shen** - [arcSurfer73878](https://github.com/arcSurfer73878)
+
+## Acknowledgments
+
+* Thanks go to the fantastic tutors at Northcoders for all of their help and direction ❤
